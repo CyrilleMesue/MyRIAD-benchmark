@@ -1,0 +1,9 @@
+[ 2025-09-06 21:15:13,570 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-06 21:15:13,574 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-06 21:15:13,574 ] 549 root - INFO - Performing LASSO
+[ 2025-09-06 21:15:13,574 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-06 21:15:13,580 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-06 21:15:13,581 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-06 21:15:13,604 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-06 21:15:13,604 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-06 21:15:13,609 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks

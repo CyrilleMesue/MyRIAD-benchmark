@@ -1,0 +1,7 @@
+[ 2025-09-06 08:34:23,979 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-06 08:34:24,011 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-06 08:34:24,011 ] 133 root - INFO - Interating over Models
+[ 2025-09-06 08:34:24,011 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-06 08:34:24,027 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-06 08:34:24,103 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-06 08:34:24,109 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE

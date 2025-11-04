@@ -1,0 +1,31 @@
+[ 2025-09-10 12:12:24,897 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:12:24,911 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:12:24,911 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:12:24,911 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:12:24,915 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:12:24,955 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:12:24,962 ] 138 root - INFO - Training Random Forest model
+[ 2025-09-10 12:12:25,022 ] 168 root - INFO - Cross Validating Random Forest model
+[ 2025-09-10 12:12:25,303 ] 179 root - INFO - Testing Random Forest model
+[ 2025-09-10 12:12:25,309 ] 138 root - INFO - Training XGBClassifier model
+[ 2025-09-10 12:12:25,384 ] 168 root - INFO - Cross Validating XGBClassifier model
+[ 2025-09-10 12:12:26,005 ] 179 root - INFO - Testing XGBClassifier model
+[ 2025-09-10 12:12:26,018 ] 138 root - INFO - Training Decision Tree model
+[ 2025-09-10 12:12:26,025 ] 168 root - INFO - Cross Validating Decision Tree model
+[ 2025-09-10 12:12:26,078 ] 179 root - INFO - Testing Decision Tree model
+[ 2025-09-10 12:12:26,085 ] 138 root - INFO - Training Gradient Boosting model
+[ 2025-09-10 12:12:26,619 ] 168 root - INFO - Cross Validating Gradient Boosting model
+[ 2025-09-10 12:12:28,560 ] 179 root - INFO - Testing Gradient Boosting model
+[ 2025-09-10 12:12:28,567 ] 138 root - INFO - Training CatBoosting Classifier model
+[ 2025-09-10 12:12:37,053 ] 168 root - INFO - Cross Validating CatBoosting Classifier model
+[ 2025-09-10 12:13:09,878 ] 179 root - INFO - Testing CatBoosting Classifier model
+[ 2025-09-10 12:13:09,884 ] 138 root - INFO - Training AdaBoost Classifier model
+[ 2025-09-10 12:13:10,093 ] 168 root - INFO - Cross Validating AdaBoost Classifier model
+[ 2025-09-10 12:13:10,834 ] 179 root - INFO - Testing AdaBoost Classifier model
+[ 2025-09-10 12:13:10,840 ] 138 root - INFO - Training MLPClassifier model
+[ 2025-09-10 12:13:10,939 ] 168 root - INFO - Cross Validating MLPClassifier model
+[ 2025-09-10 12:13:11,365 ] 179 root - INFO - Testing MLPClassifier model
+[ 2025-09-10 12:13:11,371 ] 138 root - INFO - Training SVC model
+[ 2025-09-10 12:13:11,373 ] 168 root - INFO - Cross Validating SVC model
+[ 2025-09-10 12:13:11,408 ] 179 root - INFO - Testing SVC model
+[ 2025-09-10 12:13:11,414 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE

@@ -1,0 +1,22 @@
+Feature,FeatureType,OmicsLevels,Selection Frequency,N(Selectors)
+N-acetyl-3-methylhistidine*,Metab,Single+Dual+Triple,90,23
+stachydrine,Metab,Single+Dual+Triple,88,23
+1-linoleoyl-GPC (18:2),Metab,Single+Dual+Triple,84,24
+1-methyl-5-imidazolelactate,Metab,Single+Dual+Triple,80,24
+trigonelline (N'-methylnicotinate),Metab,Single+Dual+Triple,73,20
+trimethylamine N-oxide,Metab,Single+Dual+Triple,63,22
+1-methyl-5-imidazoleacetate,Metab,Single+Dual+Triple,60,18
+"1,2-dilinoleoyl-GPC (18:2/18:2)",Metab,Single+Dual+Triple,36,18
+12-HHTrE,Metab,Single+Dual+Triple,26,17
+salicylate,Metab,Single+Dual+Triple,23,15
+2-methylserine,Metab,Single+Dual+Triple,20,15
+TBCK,Prot,Single+Dual+Triple,58,22
+NTN5,Prot,Single+Dual+Triple,37,18
+ANKRD11,Prot,Single+Dual+Triple,35,17
+ARHGAP19-SLIT1,Prot,Single+Dual+Triple,30,17
+ARHGAP35,Prot,Single+Dual+Triple,27,22
+E9PIM6,mRNA,Single+Dual,41,23
+PPT1,mRNA,Single+Dual,34,21
+LIPA4,mRNA,Single+Dual+Triple,30,15
+PCP,mRNA,Single+Dual,24,20
+ASAH1,mRNA,Single+Dual,21,20

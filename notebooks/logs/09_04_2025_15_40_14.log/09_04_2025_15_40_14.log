@@ -1,0 +1,16 @@
+[ 2025-09-04 15:40:14,430 ] 37 GEOparse - DEBUG - Directory ./ already exists. Skipping.
+[ 2025-09-04 15:40:14,433 ] 256 GEOparse - INFO - File already exist: using local version.
+[ 2025-09-04 15:40:14,433 ] 109 GEOparse - INFO - Parsing ./GPL8490.txt: 
+[ 2025-09-04 15:40:14,435 ] 493 GEOparse - DEBUG - PLATFORM: GPL8490
+[ 2025-09-04 15:40:14,930 ] 81 root - INFO - Error occured in python script name [/mnt/c/Users/SuperUser/Cyrille/MO-BICC Bench/notebooks/modules/utils.py] line number [74] error message[Object of type set is not JSON serializable]
+[ 2025-09-04 15:41:02,493 ] 37 GEOparse - DEBUG - Directory ./ already exists. Skipping.
+[ 2025-09-04 15:41:02,501 ] 256 GEOparse - INFO - File already exist: using local version.
+[ 2025-09-04 15:41:02,502 ] 109 GEOparse - INFO - Parsing ./GPL8490.txt: 
+[ 2025-09-04 15:41:02,516 ] 493 GEOparse - DEBUG - PLATFORM: GPL8490
+[ 2025-09-04 15:41:03,006 ] 78 root - INFO - Saved JSON data at '../artifacts/hm27_probe_ids.json'
+[ 2025-09-04 15:41:50,846 ] 37 GEOparse - DEBUG - Directory ./ already exists. Skipping.
+[ 2025-09-04 15:41:50,849 ] 256 GEOparse - INFO - File already exist: using local version.
+[ 2025-09-04 15:41:50,849 ] 109 GEOparse - INFO - Parsing ./GPL8490.txt: 
+[ 2025-09-04 15:41:50,851 ] 493 GEOparse - DEBUG - PLATFORM: GPL8490
+[ 2025-09-04 15:41:51,362 ] 78 root - INFO - Saved JSON data at '../artifacts/hm27_probe_ids.json'
+[ 2025-09-04 15:42:54,124 ] 60 root - INFO - Loaded JSON data from '../artifacts/hm27_probe_ids.json'

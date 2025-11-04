@@ -1,0 +1,16 @@
+[ 2025-09-06 08:59:13,026 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-06 08:59:13,052 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-06 08:59:13,053 ] 133 root - INFO - Interating over Models
+[ 2025-09-06 08:59:13,053 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-06 08:59:13,062 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-06 08:59:13,134 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-06 08:59:13,141 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-06 09:03:05,616 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-06 09:03:05,620 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-06 09:03:05,620 ] 549 root - INFO - Performing LASSO
+[ 2025-09-06 09:03:05,620 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-06 09:03:05,636 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-06 09:03:05,636 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-06 09:03:05,674 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-06 09:03:05,674 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-06 09:03:05,678 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks

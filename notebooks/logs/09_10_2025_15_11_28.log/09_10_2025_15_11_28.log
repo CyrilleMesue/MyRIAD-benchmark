@@ -1,0 +1,183 @@
+[ 2025-09-10 15:11:29,047 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:11:29,059 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:11:29,060 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:11:29,060 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:11:29,065 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:11:29,116 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:11:29,122 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:13:43,839 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-10 15:13:43,857 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-10 15:13:43,857 ] 549 root - INFO - Performing LASSO
+[ 2025-09-10 15:13:43,858 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-10 15:13:43,872 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-10 15:13:43,873 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-10 15:13:44,102 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-10 15:13:44,103 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-10 15:13:44,105 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks
+[ 2025-09-10 15:15:11,919 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-1305', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-1308', 'hsa-miR-29b', 'hsa-miR-891b', 'hsa-miR-548h', 'kshv-miR-K12-2', 'hsa-miR-220a', 'hsa-miR-190b', 'hsa-miR-195', 'hsa-miR-640', 'hsa-miR-660', 'hsa-miR-21', 'hsa-miR-299-5p', 'hsa-let-7g', 'hsa-miR-126', 'hsa-miR-376c', 'hsa-miR-369-3p', 'hsa-miR-140-3p', 'hsa-miR-1299', 'hsa-miR-296-5p', 'hsa-miR-199a-5p', 'hsv1-miR-H8', 'hsa-miR-490-5p', 'hsa-miR-127-3p', 'hsa-miR-423-3p', 'hsa-miR-361-5p', 'hsa-miR-551b', 'hsa-miR-192', 'hsa-miR-137', 'hsa-miR-186', 'hsa-miR-633', 'hsa-miR-143', 'hsa-miR-767-5p', 'hsa-miR-125b', 'hsa-miR-485-3p', 'hsa-miR-98', 'hsa-miR-151-3p', 'hsa-miR-577', 'hsa-miR-488', 'hsa-miR-2117', 'hsa-miR-145', 'hsa-miR-497', 'hsa-miR-10a', 'hsa-miR-522', 'hsa-miR-448', 'hsa-miR-1', 'hsa-miR-424', 'hsa-miR-376a', 'hsa-miR-219-5p', 'hsa-miR-1283', 'hsa-miR-151-5p', 'hsa-miR-664', 'hsa-miR-197', 'hsa-miR-873', 'hsa-miR-106b', 'hsa-miR-769-5p', 'hsa-miR-130b', 'hsa-miR-15a', 'hsa-miR-152', 'hsa-miR-101', 'hsa-miR-378', 'hsa-miR-7', 'hsa-miR-595', 'hsa-miR-140-5p', 'hsa-miR-425', 'hsa-miR-331-3p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:15:15,851 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:15:15,852 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:15,856 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:15,857 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-423-3p', 'hsa-miR-424', 'hsa-miR-425', 'hsa-miR-448', 'hsa-miR-485-3p', 'hsa-miR-488', 'hsa-miR-490-5p', 'hsa-miR-378', 'hsa-miR-331-3p', 'hsa-miR-361-5p', 'hsa-miR-369-3p', 'hsa-miR-376a', 'hsa-miR-376c', 'hsa-miR-497', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-660', 'hsa-miR-7', 'hsa-miR-767-5p', 'hsa-miR-769-5p', 'hsa-miR-873', 'hsa-miR-891b', 'hsa-miR-98', 'hsv1-miR-H8', 'kshv-miR-K12-2', 'hsa-miR-664', 'hsa-miR-522', 'hsa-miR-548h', 'hsa-miR-551b', 'hsa-miR-577', 'hsa-miR-595', 'hsa-miR-633', 'hsa-miR-640', 'hsa-miR-127-3p', 'hsa-miR-1283', 'hsa-miR-1299', 'hsa-miR-1305', 'hsa-miR-1308', 'hsa-miR-130b', 'hsa-miR-137', 'hsa-miR-140-3p', 'hsa-miR-140-5p', 'hsa-miR-143', 'hsa-let-7g', 'hsa-miR-1', 'hsa-miR-101', 'hsa-miR-106b', 'hsa-miR-10a', 'hsa-miR-125b', 'hsa-miR-126', 'hsa-miR-145', 'hsa-miR-21', 'hsa-miR-2117', 'hsa-miR-219-5p', 'hsa-miR-220a', 'hsa-miR-296-5p', 'hsa-miR-299-5p', 'hsa-miR-29b', 'hsa-miR-199a-5p', 'hsa-miR-151-3p', 'hsa-miR-151-5p', 'hsa-miR-152', 'hsa-miR-15a', 'hsa-miR-186', 'hsa-miR-190b', 'hsa-miR-192', 'hsa-miR-195', 'hsa-miR-197'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:15:16,370 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:15:16,371 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:16,374 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:16,376 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-660', 'hsa-miR-1308', 'hsa-miR-633', 'kshv-miR-K12-2', 'hsa-miR-423-3p', 'hsa-miR-7', 'hsa-miR-29b', 'hsa-miR-548h', 'hsa-miR-10a', 'hsa-miR-143', 'hsa-miR-640', 'hsa-miR-448', 'hsa-miR-1', 'hsa-miR-127-3p', 'hsa-miR-577', 'hsa-miR-425', 'hsa-miR-152', 'hsa-miR-767-5p', 'hsa-miR-299-5p', 'hsa-miR-490-5p', 'hsa-miR-130b', 'hsa-miR-769-5p', 'hsa-miR-190b', 'hsa-miR-1299', 'hsa-miR-219-5p', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-378', 'hsa-miR-485-3p', 'hsa-miR-331-3p', 'hsa-miR-522', 'hsa-miR-140-5p', 'hsa-miR-192', 'hsa-miR-664', 'hsa-miR-891b', 'hsa-miR-361-5p', 'hsa-miR-497', 'hsa-miR-296-5p', 'hsa-miR-15a', 'hsa-miR-1283', 'hsa-miR-376c', 'hsa-miR-488', 'hsa-miR-424', 'hsa-miR-21', 'hsa-miR-140-3p', 'hsa-miR-125b', 'hsa-miR-376a', 'hsa-miR-145', 'hsa-miR-195', 'hsa-miR-101', 'hsa-miR-151-5p', 'hsa-miR-186', 'hsa-miR-197', 'hsa-miR-595', 'hsa-miR-106b', 'hsa-miR-2117', 'hsa-miR-873', 'hsa-let-7g', 'hsa-miR-137', 'hsa-miR-199a-5p', 'hsa-miR-1305', 'hsa-miR-98', 'hsa-miR-551b', 'hsa-miR-126', 'hsa-miR-151-3p', 'hsa-miR-369-3p', 'hsa-miR-220a', 'hsv1-miR-H8'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:15:16,848 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:15:16,849 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:16,852 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:16,854 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-660', 'hsa-miR-1308', 'hsa-miR-633', 'kshv-miR-K12-2', 'hsa-miR-423-3p', 'hsa-miR-7', 'hsa-miR-29b', 'hsa-miR-548h', 'hsa-miR-10a', 'hsa-miR-143', 'hsa-miR-640', 'hsa-miR-448', 'hsa-miR-1', 'hsa-miR-127-3p', 'hsa-miR-577', 'hsa-miR-425', 'hsa-miR-152', 'hsa-miR-767-5p', 'hsa-miR-299-5p', 'hsa-miR-490-5p', 'hsa-miR-130b', 'hsa-miR-769-5p', 'hsa-miR-190b', 'hsa-miR-1299', 'hsa-miR-219-5p', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-378', 'hsa-miR-485-3p', 'hsa-miR-331-3p', 'hsa-miR-522', 'hsa-miR-140-5p', 'hsa-miR-192', 'hsa-miR-664', 'hsa-miR-891b', 'hsa-miR-361-5p', 'hsa-miR-497', 'hsa-miR-296-5p', 'hsa-miR-15a', 'hsa-miR-1283', 'hsa-miR-376c', 'hsa-miR-488', 'hsa-miR-424', 'hsa-miR-21', 'hsa-miR-140-3p', 'hsa-miR-125b', 'hsa-miR-376a', 'hsa-miR-145', 'hsa-miR-195', 'hsa-miR-101', 'hsa-miR-151-5p', 'hsa-miR-186', 'hsa-miR-197', 'hsa-miR-595', 'hsa-miR-106b', 'hsa-miR-2117', 'hsa-miR-873', 'hsa-let-7g', 'hsa-miR-137', 'hsa-miR-199a-5p', 'hsa-miR-1305', 'hsa-miR-98', 'hsa-miR-551b', 'hsa-miR-126', 'hsa-miR-151-3p', 'hsa-miR-369-3p', 'hsa-miR-220a', 'hsv1-miR-H8'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:15:17,338 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:15:17,338 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:17,340 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:15:19,343 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:15:19,349 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:15:19,349 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:15:19,350 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:15:19,352 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:15:19,384 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:15:19,391 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:17:02,765 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:17:02,769 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:17:02,769 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:17:02,770 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:17:02,772 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:17:02,804 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:17:02,811 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:18:44,995 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:18:44,999 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:18:45,000 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:18:45,000 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:18:45,004 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:18:45,037 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:18:45,044 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:20:27,260 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:20:27,264 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:20:27,265 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:20:27,265 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:20:27,270 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:20:27,303 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:20:27,310 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:22:08,343 ] 78 root - INFO - Saved JSON data at '../BENCHMARKING/ROSMAP/miRNA_data/ML-Baseline.json'
+[ 2025-09-10 15:22:09,915 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:22:10,225 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:22:10,226 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:22:10,226 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:22:10,233 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:22:10,284 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:22:10,290 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:24:25,654 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-10 15:24:25,665 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-10 15:24:25,666 ] 549 root - INFO - Performing LASSO
+[ 2025-09-10 15:24:25,666 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-10 15:24:25,683 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-10 15:24:25,685 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-10 15:24:25,737 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-10 15:24:25,738 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-10 15:24:25,741 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks
+[ 2025-09-10 15:25:52,209 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['cg17253459', 'cg19884658', 'cg04502814', 'cg08727202', 'cg05512756', 'cg07197059', 'cg24525573', 'cg14837165', 'cg03400060', 'cg18119407', 'cg21062347', 'cg20744464', 'cg08241785', 'cg13334277', 'cg26200585', 'cg21663431', 'cg13673514', 'cg19832721', 'cg24365867', 'cg00174500', 'cg06933965', 'cg02654291', 'cg03453449', 'cg00204262', 'cg05050341', 'cg23349242', 'cg12052765', 'cg02347487', 'cg24910675', 'cg14851685', 'cg18988110', 'cg24101578', 'cg21494776', 'cg25903497', 'cg15210427', 'cg18986273', 'cg04451770', 'cg11126134', 'cg19504245', 'cg22282672', 'cg17939444', 'cg19125606', 'cg23616741', 'cg14600885', 'cg14072120', 'cg12120741', 'cg16382322', 'cg15517609', 'cg17692403', 'cg09382492', 'cg03389133', 'cg09152089', 'cg11504740', 'cg00777121', 'cg22398616', 'cg12864235', 'cg03972838', 'cg26143719', 'cg19485804', 'cg13043509', 'cg24362726', 'cg12556134', 'cg05668853', 'cg22224704', 'cg06344807', 'cg23579062', 'cg07730301'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:25:52,490 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:25:52,491 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:52,494 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:52,496 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['cg12556134', 'cg09382492', 'cg17253459', 'cg19485804', 'cg11504740', 'cg14851685', 'cg17939444', 'cg21494776', 'cg07197059', 'cg26200585', 'cg12120741', 'cg08241785', 'cg03453449', 'cg24362726', 'cg21062347', 'cg24525573', 'cg15210427', 'cg04451770', 'cg23579062', 'cg18986273', 'cg05050341', 'cg19125606', 'cg23616741', 'cg08727202', 'cg17692403', 'cg03400060', 'cg23349242', 'cg24365867', 'cg22398616', 'cg22224704', 'cg22282672', 'cg13334277', 'cg13043509', 'cg12864235', 'cg05512756', 'cg12052765', 'cg05668853', 'cg26143719', 'cg15517609', 'cg03972838', 'cg06344807', 'cg24910675', 'cg00174500', 'cg25903497', 'cg18988110', 'cg04502814', 'cg14600885', 'cg14072120', 'cg13673514', 'cg00204262', 'cg03389133', 'cg07730301', 'cg24101578', 'cg19884658', 'cg02654291', 'cg11126134', 'cg19504245', 'cg00777121', 'cg18119407', 'cg21663431', 'cg14837165', 'cg09152089', 'cg06933965', 'cg02347487', 'cg20744464', 'cg19832721', 'cg16382322'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:25:52,774 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:25:52,774 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:52,775 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:52,775 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['cg19832721', 'cg19485804', 'cg26143719', 'cg05668853', 'cg14851685', 'cg12864235', 'cg18986273', 'cg21062347', 'cg14837165', 'cg23616741', 'cg13043509', 'cg04451770', 'cg18988110', 'cg20744464', 'cg13334277', 'cg24525573', 'cg02347487', 'cg24365867', 'cg15517609', 'cg25903497', 'cg09152089', 'cg23579062', 'cg19504245', 'cg24101578', 'cg26200585', 'cg19125606', 'cg02654291', 'cg17692403', 'cg00174500', 'cg19884658', 'cg24362726', 'cg24910675', 'cg03453449', 'cg03400060', 'cg22224704', 'cg22398616', 'cg14072120', 'cg08727202', 'cg23349242', 'cg07730301', 'cg03972838', 'cg17253459', 'cg12052765', 'cg00204262', 'cg05512756', 'cg05050341', 'cg09382492', 'cg08241785', 'cg00777121', 'cg07197059', 'cg06933965', 'cg16382322', 'cg04502814', 'cg12120741', 'cg22282672', 'cg21494776', 'cg13673514', 'cg21663431', 'cg03389133', 'cg15210427', 'cg12556134', 'cg11126134', 'cg18119407', 'cg17939444', 'cg06344807', 'cg14600885', 'cg11504740'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:25:53,048 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:25:53,049 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:53,050 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:53,052 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['cg19832721', 'cg19485804', 'cg26143719', 'cg05668853', 'cg14851685', 'cg12864235', 'cg18986273', 'cg21062347', 'cg14837165', 'cg23616741', 'cg13043509', 'cg04451770', 'cg18988110', 'cg20744464', 'cg13334277', 'cg24525573', 'cg02347487', 'cg24365867', 'cg15517609', 'cg25903497', 'cg09152089', 'cg23579062', 'cg19504245', 'cg24101578', 'cg26200585', 'cg19125606', 'cg02654291', 'cg17692403', 'cg00174500', 'cg19884658', 'cg24362726', 'cg24910675', 'cg03453449', 'cg03400060', 'cg22224704', 'cg22398616', 'cg14072120', 'cg08727202', 'cg23349242', 'cg07730301', 'cg03972838', 'cg17253459', 'cg12052765', 'cg00204262', 'cg05512756', 'cg05050341', 'cg09382492', 'cg08241785', 'cg00777121', 'cg07197059', 'cg06933965', 'cg16382322', 'cg04502814', 'cg12120741', 'cg22282672', 'cg21494776', 'cg13673514', 'cg21663431', 'cg03389133', 'cg15210427', 'cg12556134', 'cg11126134', 'cg18119407', 'cg17939444', 'cg06344807', 'cg14600885', 'cg11504740'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:25:53,325 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:25:53,327 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:53,329 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:25:55,420 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:25:55,424 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:25:55,424 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:25:55,424 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:25:55,425 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:25:55,451 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:25:55,457 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:27:53,463 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:27:53,468 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:27:53,469 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:27:53,469 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:27:53,471 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:27:53,503 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:27:53,511 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:29:36,542 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:29:36,546 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:29:36,547 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:29:36,547 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:29:36,549 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:29:36,577 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:29:36,584 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:31:18,456 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:31:18,461 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:31:18,461 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:31:18,461 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:31:18,463 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:31:18,492 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:31:18,499 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:33:01,142 ] 78 root - INFO - Saved JSON data at '../BENCHMARKING/ROSMAP/dna_methylation_data/ML-Baseline.json'
+[ 2025-09-10 15:33:01,267 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:33:01,277 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:33:01,277 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:33:01,277 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:33:01,281 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:33:01,317 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:33:01,324 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:35:15,541 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-10 15:35:15,546 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-10 15:35:15,546 ] 549 root - INFO - Performing LASSO
+[ 2025-09-10 15:35:15,546 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-10 15:35:15,556 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-10 15:35:15,557 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-10 15:35:15,600 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-10 15:35:15,601 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-10 15:35:15,602 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks
+[ 2025-09-10 15:36:42,208 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['MCM7', 'MTMR10', 'ITPKB', 'NPTXR', 'IP6K3', 'MEIS3', 'ISYNA1', 'OR7A5', 'ITPRID2', 'KCNJ16', 'MXI1', 'PADI2', 'PLEKHM2', 'PCYOX1L', 'LGMN', 'LDLRAP1', 'MID1IP1', 'MARCHF8', 'LY86-AS1', 'ODC1', 'MAP4K4', 'ICAM5', 'NRXN3', 'IQCK-AS1', 'PNMA5', 'LNCBRM', 'LINC03013', 'KIF5A', 'MYOT', 'OR7E14P', 'PHYHIP', 'KANK2', 'INPP5D', 'OLMALINC', 'KLHL5', 'NRIP2', 'MAP4K3-DT', 'MRGPRF', 'LINC01007', 'MPV17L2', 'LINC02552', 'KCNJ10', 'LINC01736', 'MAST3', 'LNCOC1', 'METTL1', 'LINC01664', 'KIF13B', 'LINC00515', 'NDE1', 'IQGAP1', 'LINC00507', 'PLEKHB1', 'NUMBL', 'OGA', 'INPPL1', 'LINC01485', 'PIEZO2', 'LINC00926', 'KIF5B', 'PHF19', 'PLXNB1', 'MRAS', 'LINC00310', 'HSPB2', 'PLK2', 'LINC02217'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:36:42,616 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:36:42,617 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:42,622 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:42,625 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['NDE1', 'LDLRAP1', 'INPPL1', 'PHYHIP', 'PIEZO2', 'PLEKHB1', 'PLEKHM2', 'PLK2', 'PLXNB1', 'PNMA5', 'PHF19', 'PCYOX1L', 'MXI1', 'MAST3', 'MCM7', 'MEIS3', 'METTL1', 'MID1IP1', 'MPV17L2', 'MRAS', 'MRGPRF', 'MTMR10', 'MYOT', 'PADI2', 'NPTXR', 'NRIP2', 'NRXN3', 'NUMBL', 'ODC1', 'OGA', 'OLMALINC', 'OR7A5', 'OR7E14P', 'MAP4K4', 'MARCHF8', 'MAP4K3-DT', 'LY86-AS1', 'KANK2', 'KCNJ10', 'KCNJ16', 'KIF13B', 'KIF5A', 'KIF5B', 'KLHL5', 'LGMN', 'LINC00310', 'LINC00507', 'LINC00515', 'LINC00926', 'LINC01007', 'LINC01485', 'LINC01664', 'LINC01736', 'LINC02217', 'LINC02552', 'LINC03013', 'LNCBRM', 'LNCOC1', 'ITPRID2', 'ITPKB', 'ISYNA1', 'IQGAP1', 'HSPB2', 'ICAM5', 'INPP5D', 'IP6K3', 'IQCK-AS1'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:36:44,205 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:36:44,206 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:44,210 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:44,214 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['KLHL5', 'MID1IP1', 'PLEKHB1', 'KIF5A', 'LNCBRM', 'MEIS3', 'METTL1', 'LGMN', 'ITPRID2', 'LINC00507', 'OLMALINC', 'LINC00310', 'HSPB2', 'PLK2', 'PCYOX1L', 'LINC03013', 'LDLRAP1', 'OR7A5', 'PHF19', 'MPV17L2', 'MCM7', 'LINC00515', 'NRXN3', 'PIEZO2', 'IQGAP1', 'KIF5B', 'KIF13B', 'LNCOC1', 'OR7E14P', 'PLEKHM2', 'NRIP2', 'MAP4K3-DT', 'LINC02552', 'LY86-AS1', 'LINC01485', 'MAST3', 'NUMBL', 'KCNJ16', 'PHYHIP', 'LINC00926', 'LINC01007', 'PADI2', 'LINC01664', 'LINC01736', 'OGA', 'ODC1', 'LINC02217', 'MARCHF8', 'NPTXR', 'NDE1', 'MYOT', 'MXI1', 'MTMR10', 'MRGPRF', 'MRAS', 'MAP4K4', 'KCNJ10', 'KANK2', 'ITPKB', 'PLXNB1', 'ICAM5', 'INPP5D', 'INPPL1', 'IP6K3', 'IQCK-AS1', 'ISYNA1', 'PNMA5'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:36:44,599 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:36:44,600 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:44,604 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:44,608 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['KLHL5', 'MID1IP1', 'PLEKHB1', 'KIF5A', 'LNCBRM', 'MEIS3', 'METTL1', 'LGMN', 'ITPRID2', 'LINC00507', 'OLMALINC', 'LINC00310', 'HSPB2', 'PLK2', 'PCYOX1L', 'LINC03013', 'LDLRAP1', 'OR7A5', 'PHF19', 'MPV17L2', 'MCM7', 'LINC00515', 'NRXN3', 'PIEZO2', 'IQGAP1', 'KIF5B', 'KIF13B', 'LNCOC1', 'OR7E14P', 'PLEKHM2', 'NRIP2', 'MAP4K3-DT', 'LINC02552', 'LY86-AS1', 'LINC01485', 'MAST3', 'NUMBL', 'KCNJ16', 'PHYHIP', 'LINC00926', 'LINC01007', 'PADI2', 'LINC01664', 'LINC01736', 'OGA', 'ODC1', 'LINC02217', 'MARCHF8', 'NPTXR', 'NDE1', 'MYOT', 'MXI1', 'MTMR10', 'MRGPRF', 'MRAS', 'MAP4K4', 'KCNJ10', 'KANK2', 'ITPKB', 'PLXNB1', 'ICAM5', 'INPP5D', 'INPPL1', 'IP6K3', 'IQCK-AS1', 'ISYNA1', 'PNMA5'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 15:36:45,017 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 15:36:45,018 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:45,022 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 15:36:47,268 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:36:47,272 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:36:47,272 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:36:47,272 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:36:47,273 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:36:47,298 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:36:47,305 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:38:30,710 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:38:30,715 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:38:30,715 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:38:30,715 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:38:30,717 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:38:30,743 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:38:30,749 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:40:15,147 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:40:15,151 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:40:15,151 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:40:15,151 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:40:15,153 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:40:15,179 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:40:15,185 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:42:01,172 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 15:42:01,179 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 15:42:01,179 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 15:42:01,179 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 15:42:01,181 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 15:42:01,208 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 15:42:01,215 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 15:43:44,206 ] 78 root - INFO - Saved JSON data at '../BENCHMARKING/ROSMAP/gene_expression_data/ML-Baseline.json'

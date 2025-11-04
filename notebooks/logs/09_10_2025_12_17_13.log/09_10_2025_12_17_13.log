@@ -1,0 +1,184 @@
+[ 2025-09-10 12:17:14,864 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:17:14,877 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:17:14,877 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:17:14,877 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:17:14,881 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:17:14,921 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:17:14,927 ] 138 root - INFO - Training Random Forest model
+[ 2025-09-10 12:17:14,986 ] 168 root - INFO - Cross Validating Random Forest model
+[ 2025-09-10 12:17:15,270 ] 179 root - INFO - Testing Random Forest model
+[ 2025-09-10 12:17:15,276 ] 138 root - INFO - Training XGBClassifier model
+[ 2025-09-10 12:17:15,345 ] 168 root - INFO - Cross Validating XGBClassifier model
+[ 2025-09-10 12:17:15,942 ] 179 root - INFO - Testing XGBClassifier model
+[ 2025-09-10 12:17:15,948 ] 138 root - INFO - Training Decision Tree model
+[ 2025-09-10 12:17:15,955 ] 168 root - INFO - Cross Validating Decision Tree model
+[ 2025-09-10 12:17:16,003 ] 179 root - INFO - Testing Decision Tree model
+[ 2025-09-10 12:17:16,009 ] 138 root - INFO - Training Gradient Boosting model
+[ 2025-09-10 12:17:16,519 ] 168 root - INFO - Cross Validating Gradient Boosting model
+[ 2025-09-10 12:17:18,412 ] 179 root - INFO - Testing Gradient Boosting model
+[ 2025-09-10 12:17:18,418 ] 138 root - INFO - Training CatBoosting Classifier model
+[ 2025-09-10 12:17:26,711 ] 168 root - INFO - Cross Validating CatBoosting Classifier model
+[ 2025-09-10 12:18:00,433 ] 179 root - INFO - Testing CatBoosting Classifier model
+[ 2025-09-10 12:18:00,439 ] 138 root - INFO - Training AdaBoost Classifier model
+[ 2025-09-10 12:18:00,648 ] 168 root - INFO - Cross Validating AdaBoost Classifier model
+[ 2025-09-10 12:18:01,374 ] 179 root - INFO - Testing AdaBoost Classifier model
+[ 2025-09-10 12:18:01,380 ] 138 root - INFO - Training MLPClassifier model
+[ 2025-09-10 12:18:01,482 ] 168 root - INFO - Cross Validating MLPClassifier model
+[ 2025-09-10 12:18:01,902 ] 179 root - INFO - Testing MLPClassifier model
+[ 2025-09-10 12:18:01,908 ] 138 root - INFO - Training SVC model
+[ 2025-09-10 12:18:01,910 ] 168 root - INFO - Cross Validating SVC model
+[ 2025-09-10 12:18:01,946 ] 179 root - INFO - Testing SVC model
+[ 2025-09-10 12:18:01,952 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:20:28,427 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:20:28,441 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:20:28,442 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:20:28,442 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:20:28,446 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:20:28,579 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:20:28,586 ] 138 root - INFO - Training Random Forest model
+[ 2025-09-10 12:20:28,643 ] 168 root - INFO - Cross Validating Random Forest model
+[ 2025-09-10 12:20:28,932 ] 179 root - INFO - Testing Random Forest model
+[ 2025-09-10 12:20:28,939 ] 138 root - INFO - Training XGBClassifier model
+[ 2025-09-10 12:20:29,010 ] 168 root - INFO - Cross Validating XGBClassifier model
+[ 2025-09-10 12:20:29,654 ] 179 root - INFO - Testing XGBClassifier model
+[ 2025-09-10 12:20:29,662 ] 138 root - INFO - Training Decision Tree model
+[ 2025-09-10 12:20:29,668 ] 168 root - INFO - Cross Validating Decision Tree model
+[ 2025-09-10 12:20:29,724 ] 179 root - INFO - Testing Decision Tree model
+[ 2025-09-10 12:20:29,731 ] 138 root - INFO - Training Gradient Boosting model
+[ 2025-09-10 12:20:30,259 ] 168 root - INFO - Cross Validating Gradient Boosting model
+[ 2025-09-10 12:20:32,260 ] 179 root - INFO - Testing Gradient Boosting model
+[ 2025-09-10 12:20:32,266 ] 138 root - INFO - Training CatBoosting Classifier model
+[ 2025-09-10 12:20:40,441 ] 168 root - INFO - Cross Validating CatBoosting Classifier model
+[ 2025-09-10 12:21:15,210 ] 179 root - INFO - Testing CatBoosting Classifier model
+[ 2025-09-10 12:21:15,216 ] 138 root - INFO - Training AdaBoost Classifier model
+[ 2025-09-10 12:21:15,425 ] 168 root - INFO - Cross Validating AdaBoost Classifier model
+[ 2025-09-10 12:21:16,150 ] 179 root - INFO - Testing AdaBoost Classifier model
+[ 2025-09-10 12:21:16,156 ] 138 root - INFO - Training MLPClassifier model
+[ 2025-09-10 12:21:16,257 ] 168 root - INFO - Cross Validating MLPClassifier model
+[ 2025-09-10 12:21:16,688 ] 179 root - INFO - Testing MLPClassifier model
+[ 2025-09-10 12:21:16,706 ] 138 root - INFO - Training SVC model
+[ 2025-09-10 12:21:16,708 ] 168 root - INFO - Cross Validating SVC model
+[ 2025-09-10 12:21:16,744 ] 179 root - INFO - Testing SVC model
+[ 2025-09-10 12:21:16,750 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:34:14,747 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:34:14,756 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:34:14,756 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:34:14,756 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:34:14,759 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:34:14,793 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:34:14,799 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:35:49,609 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-10 12:35:49,614 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-10 12:35:49,614 ] 549 root - INFO - Performing LASSO
+[ 2025-09-10 12:35:49,615 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-10 12:35:49,621 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-10 12:35:49,622 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-10 12:35:49,674 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-10 12:35:49,678 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-10 12:35:49,682 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks
+[ 2025-09-10 12:36:21,567 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-369-5p', 'hsa-miR-487b-3p', 'hsa-miR-454-3p', 'hsa-miR-758-5p', 'hsa-miR-493-3p', 'hsa-miR-148b-5p', 'hsa-miR-15a-5p', 'hsa-miR-154-5p', 'hsa-miR-381-3p', 'hsa-miR-218-5p', 'hsa-miR-299-5p', 'hsa-miR-101-5p', 'hsa-miR-4677-3p', 'hsa-miR-7705', 'hsa-miR-379-5p', 'hsa-miR-3613-5p', 'hsa-miR-1-3p', 'hsa-miR-129-5p', 'hsa-miR-181a-3p', 'hsa-miR-671-5p', 'hsa-miR-128-3p', 'hsa-miR-15b-3p', 'hsa-miR-181b-5p', 'hsa-miR-432-5p', 'hsa-miR-326', 'hsa-miR-3613-3p', 'hsa-miR-590-3p', 'hsa-miR-107', 'hsa-miR-376c-3p', 'hsa-miR-127-3p', 'hsa-miR-224-3p', 'hsa-miR-215-5p', 'hsa-miR-210-3p', 'hsa-miR-452-3p', 'hsa-miR-205-5p', 'hsa-miR-6510-3p', 'hsa-miR-93-5p', 'hsa-miR-494-3p', 'hsa-miR-27a-5p', 'hsa-miR-6716-3p', 'hsa-miR-654-5p', 'hsa-miR-143-3p', 'hsa-miR-342-5p', 'hsa-miR-676-3p', 'hsa-miR-296-5p', 'hsa-miR-130a-3p', 'hsa-miR-126-5p', 'hsa-miR-379-3p', 'hsa-miR-181c-3p', 'hsa-miR-92b-3p', 'hsa-miR-30e-3p', 'hsa-miR-1295a', 'hsa-miR-1262', 'hsa-miR-340-5p', 'hsa-miR-370-5p', 'hsa-miR-199b-5p', 'hsa-miR-4746-5p', 'hsa-miR-891a-5p', 'hsa-miR-487a-5p', 'hsa-miR-483-5p', 'hsa-miR-431-3p', 'hsa-miR-1247-5p', 'hsa-miR-130b-3p', 'hsa-miR-329-3p', 'hsa-miR-200c-5p', 'hsa-miR-1468-5p', 'hsa-miR-503-5p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:36:22,570 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:36:22,571 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:22,573 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:22,574 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-101-5p', 'hsa-miR-326', 'hsa-miR-329-3p', 'hsa-miR-340-5p', 'hsa-miR-758-5p', 'hsa-miR-342-5p', 'hsa-miR-370-5p', 'hsa-miR-369-5p', 'hsa-miR-3613-3p', 'hsa-miR-3613-5p', 'hsa-miR-376c-3p', 'hsa-miR-452-3p', 'hsa-miR-493-3p', 'hsa-miR-494-3p', 'hsa-miR-503-5p', 'hsa-miR-590-3p', 'hsa-miR-487b-3p', 'hsa-miR-6510-3p', 'hsa-miR-654-5p', 'hsa-miR-671-5p', 'hsa-miR-6716-3p', 'hsa-miR-487a-5p', 'hsa-miR-379-3p', 'hsa-miR-379-5p', 'hsa-miR-381-3p', 'hsa-miR-431-3p', 'hsa-miR-432-5p', 'hsa-miR-454-3p', 'hsa-miR-4677-3p', 'hsa-miR-4746-5p', 'hsa-miR-483-5p', 'hsa-miR-30e-3p', 'hsa-miR-143-3p', 'hsa-miR-1468-5p', 'hsa-miR-130a-3p', 'hsa-miR-148b-5p', 'hsa-miR-154-5p', 'hsa-miR-15a-5p', 'hsa-miR-15b-3p', 'hsa-miR-181a-3p', 'hsa-miR-130b-3p', 'hsa-miR-181c-3p', 'hsa-miR-126-5p', 'hsa-miR-1-3p', 'hsa-miR-107', 'hsa-miR-1247-5p', 'hsa-miR-1262', 'hsa-miR-127-3p', 'hsa-miR-128-3p', 'hsa-miR-129-5p', 'hsa-miR-1295a', 'hsa-miR-181b-5p', 'hsa-miR-296-5p', 'hsa-miR-210-3p', 'hsa-miR-215-5p', 'hsa-miR-218-5p', 'hsa-miR-224-3p', 'hsa-miR-27a-5p', 'hsa-miR-676-3p', 'hsa-miR-299-5p', 'hsa-miR-200c-5p', 'hsa-miR-205-5p', 'hsa-miR-199b-5p', 'hsa-miR-7705', 'hsa-miR-93-5p', 'hsa-miR-891a-5p', 'hsa-miR-92b-3p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:36:23,115 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:36:23,116 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:23,120 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:23,123 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-676-3p', 'hsa-miR-129-5p', 'hsa-miR-3613-3p', 'hsa-miR-1262', 'hsa-miR-107', 'hsa-miR-1295a', 'hsa-miR-181a-3p', 'hsa-miR-4746-5p', 'hsa-miR-4677-3p', 'hsa-miR-148b-5p', 'hsa-miR-3613-5p', 'hsa-miR-181c-3p', 'hsa-miR-342-5p', 'hsa-miR-7705', 'hsa-miR-431-3p', 'hsa-miR-379-3p', 'hsa-miR-758-5p', 'hsa-miR-494-3p', 'hsa-miR-326', 'hsa-miR-154-5p', 'hsa-miR-215-5p', 'hsa-miR-15b-3p', 'hsa-miR-452-3p', 'hsa-miR-127-3p', 'hsa-miR-487b-3p', 'hsa-miR-101-5p', 'hsa-miR-27a-5p', 'hsa-miR-205-5p', 'hsa-miR-92b-3p', 'hsa-miR-376c-3p', 'hsa-miR-454-3p', 'hsa-miR-15a-5p', 'hsa-miR-6510-3p', 'hsa-miR-379-5p', 'hsa-miR-369-5p', 'hsa-miR-1468-5p', 'hsa-miR-128-3p', 'hsa-miR-891a-5p', 'hsa-miR-340-5p', 'hsa-miR-503-5p', 'hsa-miR-30e-3p', 'hsa-miR-181b-5p', 'hsa-miR-370-5p', 'hsa-miR-432-5p', 'hsa-miR-93-5p', 'hsa-miR-483-5p', 'hsa-miR-329-3p', 'hsa-miR-210-3p', 'hsa-miR-130a-3p', 'hsa-miR-590-3p', 'hsa-miR-493-3p', 'hsa-miR-1-3p', 'hsa-miR-143-3p', 'hsa-miR-1247-5p', 'hsa-miR-671-5p', 'hsa-miR-200c-5p', 'hsa-miR-126-5p', 'hsa-miR-224-3p', 'hsa-miR-381-3p', 'hsa-miR-487a-5p', 'hsa-miR-299-5p', 'hsa-miR-296-5p', 'hsa-miR-654-5p', 'hsa-miR-199b-5p', 'hsa-miR-6716-3p', 'hsa-miR-218-5p', 'hsa-miR-130b-3p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:36:23,633 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:36:23,634 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:23,635 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:23,637 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-676-3p', 'hsa-miR-129-5p', 'hsa-miR-3613-3p', 'hsa-miR-1262', 'hsa-miR-107', 'hsa-miR-1295a', 'hsa-miR-181a-3p', 'hsa-miR-4746-5p', 'hsa-miR-4677-3p', 'hsa-miR-148b-5p', 'hsa-miR-3613-5p', 'hsa-miR-181c-3p', 'hsa-miR-342-5p', 'hsa-miR-7705', 'hsa-miR-431-3p', 'hsa-miR-379-3p', 'hsa-miR-758-5p', 'hsa-miR-494-3p', 'hsa-miR-326', 'hsa-miR-154-5p', 'hsa-miR-215-5p', 'hsa-miR-15b-3p', 'hsa-miR-452-3p', 'hsa-miR-127-3p', 'hsa-miR-487b-3p', 'hsa-miR-101-5p', 'hsa-miR-27a-5p', 'hsa-miR-205-5p', 'hsa-miR-92b-3p', 'hsa-miR-376c-3p', 'hsa-miR-454-3p', 'hsa-miR-15a-5p', 'hsa-miR-6510-3p', 'hsa-miR-379-5p', 'hsa-miR-369-5p', 'hsa-miR-1468-5p', 'hsa-miR-128-3p', 'hsa-miR-891a-5p', 'hsa-miR-340-5p', 'hsa-miR-503-5p', 'hsa-miR-30e-3p', 'hsa-miR-181b-5p', 'hsa-miR-370-5p', 'hsa-miR-432-5p', 'hsa-miR-93-5p', 'hsa-miR-483-5p', 'hsa-miR-329-3p', 'hsa-miR-210-3p', 'hsa-miR-130a-3p', 'hsa-miR-590-3p', 'hsa-miR-493-3p', 'hsa-miR-1-3p', 'hsa-miR-143-3p', 'hsa-miR-1247-5p', 'hsa-miR-671-5p', 'hsa-miR-200c-5p', 'hsa-miR-126-5p', 'hsa-miR-224-3p', 'hsa-miR-381-3p', 'hsa-miR-487a-5p', 'hsa-miR-299-5p', 'hsa-miR-296-5p', 'hsa-miR-654-5p', 'hsa-miR-199b-5p', 'hsa-miR-6716-3p', 'hsa-miR-218-5p', 'hsa-miR-130b-3p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:36:24,115 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:36:24,116 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:24,118 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:36:28,149 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:36:28,153 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:36:28,153 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:36:28,153 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:36:28,155 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:36:28,181 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:36:28,187 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:37:43,180 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:37:43,185 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:37:43,185 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:37:43,185 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:37:43,187 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:37:43,214 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:37:43,220 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:38:58,503 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:38:58,507 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:38:58,508 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:38:58,508 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:38:58,510 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:38:58,537 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:38:58,543 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:40:13,651 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:40:13,656 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:40:13,656 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:40:13,656 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:40:13,658 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:40:13,685 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:40:13,692 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:41:29,691 ] 78 root - INFO - Saved JSON data at '../BENCHMARKING/BRCA/miRNA_data/ML-Baseline.json'
+[ 2025-09-10 12:43:12,736 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:43:12,746 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:43:12,746 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:43:12,746 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:43:12,751 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:43:12,798 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:43:12,804 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:45:26,466 ] 103 root - INFO - Initializing Logistic Regression with penalty 'l1'
+[ 2025-09-10 12:45:26,515 ] 867 root - INFO - RUNNING ALL ANALYSES
+[ 2025-09-10 12:45:26,516 ] 549 root - INFO - Performing LASSO
+[ 2025-09-10 12:45:26,516 ] 127 root - INFO - Fitting model and extracting coefficients.
+[ 2025-09-10 12:45:26,528 ] 170 root - INFO - Computing feature importances.
+[ 2025-09-10 12:45:26,529 ] 183 root - INFO - Plotting feature importances.
+[ 2025-09-10 12:45:26,545 ] 919 root - INFO - Saving Feature Importances
+[ 2025-09-10 12:45:26,545 ] 927 root - INFO - ALL ANALYSES COMPLETED!!!
+[ 2025-09-10 12:45:26,548 ] 123 root - INFO - Performing Feature Selection by Aggregating Feature Ranks
+[ 2025-09-10 12:46:55,912 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-1', 'hsa-miR-522', 'hsa-miR-197', 'hsa-miR-199a-5p', 'hsa-miR-7', 'hsa-miR-192', 'hsa-miR-15a', 'hsa-miR-2117', 'hsa-miR-140-5p', 'hsv1-miR-H8', 'hsa-miR-137', 'hsa-miR-488', 'hsa-miR-10a', 'hsa-miR-331-3p', 'hsa-miR-376c', 'hsa-miR-296-5p', 'hsa-miR-151-3p', 'hsa-miR-152', 'hsa-miR-497', 'hsa-miR-190b', 'hsa-miR-219-5p', 'hsa-miR-424', 'hsa-miR-1283', 'hsa-miR-1305', 'kshv-miR-K12-2', 'hsa-miR-195', 'hsa-miR-21', 'hsa-miR-425', 'hsa-miR-369-3p', 'hsa-miR-151-5p', 'hsa-miR-143', 'hsa-miR-891b', 'hsa-miR-376a', 'hsa-miR-551b', 'hsa-miR-769-5p', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-548h', 'hsa-miR-1299', 'hsa-miR-378', 'hsa-miR-577', 'hsa-miR-633', 'hsa-miR-490-5p', 'hsa-miR-29b', 'hsa-miR-126', 'hsa-miR-485-3p', 'hsa-miR-1308', 'hsa-miR-145', 'hsa-miR-125b', 'hsa-miR-106b', 'hsa-miR-299-5p', 'hsa-miR-361-5p', 'hsa-miR-101', 'hsa-miR-186', 'hsa-miR-448', 'hsa-miR-640', 'hsa-let-7g', 'hsa-miR-595', 'hsa-miR-140-3p', 'hsa-miR-423-3p', 'hsa-miR-98', 'hsa-miR-873', 'hsa-miR-767-5p', 'hsa-miR-220a', 'hsa-miR-660', 'hsa-miR-130b', 'hsa-miR-664', 'hsa-miR-127-3p'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:46:56,711 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:46:56,713 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:56,716 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:56,717 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-423-3p', 'hsa-miR-424', 'hsa-miR-425', 'hsa-miR-448', 'hsa-miR-485-3p', 'hsa-miR-488', 'hsa-miR-490-5p', 'hsa-miR-378', 'hsa-miR-331-3p', 'hsa-miR-361-5p', 'hsa-miR-369-3p', 'hsa-miR-376a', 'hsa-miR-376c', 'hsa-miR-497', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-660', 'hsa-miR-7', 'hsa-miR-767-5p', 'hsa-miR-769-5p', 'hsa-miR-873', 'hsa-miR-891b', 'hsa-miR-98', 'hsv1-miR-H8', 'kshv-miR-K12-2', 'hsa-miR-664', 'hsa-miR-522', 'hsa-miR-548h', 'hsa-miR-551b', 'hsa-miR-577', 'hsa-miR-595', 'hsa-miR-633', 'hsa-miR-640', 'hsa-miR-127-3p', 'hsa-miR-1283', 'hsa-miR-1299', 'hsa-miR-1305', 'hsa-miR-1308', 'hsa-miR-130b', 'hsa-miR-137', 'hsa-miR-140-3p', 'hsa-miR-140-5p', 'hsa-miR-143', 'hsa-let-7g', 'hsa-miR-1', 'hsa-miR-101', 'hsa-miR-106b', 'hsa-miR-10a', 'hsa-miR-125b', 'hsa-miR-126', 'hsa-miR-145', 'hsa-miR-21', 'hsa-miR-2117', 'hsa-miR-219-5p', 'hsa-miR-220a', 'hsa-miR-296-5p', 'hsa-miR-299-5p', 'hsa-miR-29b', 'hsa-miR-199a-5p', 'hsa-miR-151-3p', 'hsa-miR-151-5p', 'hsa-miR-152', 'hsa-miR-15a', 'hsa-miR-186', 'hsa-miR-190b', 'hsa-miR-192', 'hsa-miR-195', 'hsa-miR-197'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:46:57,233 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:46:57,235 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:57,238 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:57,243 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-660', 'hsa-miR-1308', 'hsa-miR-633', 'kshv-miR-K12-2', 'hsa-miR-423-3p', 'hsa-miR-7', 'hsa-miR-29b', 'hsa-miR-548h', 'hsa-miR-10a', 'hsa-miR-143', 'hsa-miR-640', 'hsa-miR-448', 'hsa-miR-1', 'hsa-miR-127-3p', 'hsa-miR-577', 'hsa-miR-425', 'hsa-miR-152', 'hsa-miR-767-5p', 'hsa-miR-299-5p', 'hsa-miR-490-5p', 'hsa-miR-130b', 'hsa-miR-769-5p', 'hsa-miR-190b', 'hsa-miR-1299', 'hsa-miR-219-5p', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-378', 'hsa-miR-485-3p', 'hsa-miR-331-3p', 'hsa-miR-522', 'hsa-miR-140-5p', 'hsa-miR-192', 'hsa-miR-664', 'hsa-miR-891b', 'hsa-miR-361-5p', 'hsa-miR-497', 'hsa-miR-296-5p', 'hsa-miR-15a', 'hsa-miR-1283', 'hsa-miR-376c', 'hsa-miR-488', 'hsa-miR-424', 'hsa-miR-21', 'hsa-miR-140-3p', 'hsa-miR-125b', 'hsa-miR-376a', 'hsa-miR-145', 'hsa-miR-195', 'hsa-miR-101', 'hsa-miR-151-5p', 'hsa-miR-186', 'hsa-miR-197', 'hsa-miR-595', 'hsa-miR-106b', 'hsa-miR-2117', 'hsa-miR-873', 'hsa-let-7g', 'hsa-miR-137', 'hsa-miR-199a-5p', 'hsa-miR-1305', 'hsa-miR-98', 'hsa-miR-551b', 'hsa-miR-126', 'hsa-miR-151-3p', 'hsa-miR-369-3p', 'hsa-miR-220a', 'hsv1-miR-H8'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:46:57,756 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:46:57,757 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:57,761 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:57,764 ] 72 root - INFO - Fetching GO Terms based on Parameters: {'organism': 'hsapiens', 'query': ['hsa-miR-660', 'hsa-miR-1308', 'hsa-miR-633', 'kshv-miR-K12-2', 'hsa-miR-423-3p', 'hsa-miR-7', 'hsa-miR-29b', 'hsa-miR-548h', 'hsa-miR-10a', 'hsa-miR-143', 'hsa-miR-640', 'hsa-miR-448', 'hsa-miR-1', 'hsa-miR-127-3p', 'hsa-miR-577', 'hsa-miR-425', 'hsa-miR-152', 'hsa-miR-767-5p', 'hsa-miR-299-5p', 'hsa-miR-490-5p', 'hsa-miR-130b', 'hsa-miR-769-5p', 'hsa-miR-190b', 'hsa-miR-1299', 'hsa-miR-219-5p', 'hsa-miR-500_hsa-miR-501-5p', 'hsa-miR-378', 'hsa-miR-485-3p', 'hsa-miR-331-3p', 'hsa-miR-522', 'hsa-miR-140-5p', 'hsa-miR-192', 'hsa-miR-664', 'hsa-miR-891b', 'hsa-miR-361-5p', 'hsa-miR-497', 'hsa-miR-296-5p', 'hsa-miR-15a', 'hsa-miR-1283', 'hsa-miR-376c', 'hsa-miR-488', 'hsa-miR-424', 'hsa-miR-21', 'hsa-miR-140-3p', 'hsa-miR-125b', 'hsa-miR-376a', 'hsa-miR-145', 'hsa-miR-195', 'hsa-miR-101', 'hsa-miR-151-5p', 'hsa-miR-186', 'hsa-miR-197', 'hsa-miR-595', 'hsa-miR-106b', 'hsa-miR-2117', 'hsa-miR-873', 'hsa-let-7g', 'hsa-miR-137', 'hsa-miR-199a-5p', 'hsa-miR-1305', 'hsa-miR-98', 'hsa-miR-551b', 'hsa-miR-126', 'hsa-miR-151-3p', 'hsa-miR-369-3p', 'hsa-miR-220a', 'hsv1-miR-H8'], 'sources': ['KEGG', 'REAC'], 'ordered': True, 'user_threshold': 0.05, 'no_evidences': False}
+[ 2025-09-10 12:46:58,212 ] 184 root - INFO - Removing Parent Terms
+[ 2025-09-10 12:46:58,213 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:46:58,216 ] 94 root - INFO - Converting Results to Tabular Format
+[ 2025-09-10 12:47:00,220 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:47:00,224 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:47:00,224 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:47:00,224 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:47:00,226 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:47:00,255 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:47:00,262 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:48:42,269 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:48:42,274 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:48:42,275 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:48:42,278 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:48:42,283 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:48:42,317 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:48:42,324 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:50:23,256 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:50:23,260 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:50:23,260 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:50:23,260 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:50:23,263 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:50:23,293 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:50:23,299 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:52:04,564 ] 197 root - INFO - Transforming Data: Encoding Labels, Creating a Train/Test Split, Transforming Features
+[ 2025-09-10 12:52:04,568 ] 281 root - INFO - TRAINING AND EVALUATING MODELS
+[ 2025-09-10 12:52:04,569 ] 133 root - INFO - Interating over Models
+[ 2025-09-10 12:52:04,569 ] 138 root - INFO - Training Logistic Regression model
+[ 2025-09-10 12:52:04,572 ] 168 root - INFO - Cross Validating Logistic Regression model
+[ 2025-09-10 12:52:04,605 ] 179 root - INFO - Testing Logistic Regression model
+[ 2025-09-10 12:52:04,612 ] 331 root - INFO - MODEL TRAINING AND EVALUATION COMPLETE
+[ 2025-09-10 12:53:45,748 ] 78 root - INFO - Saved JSON data at '../BENCHMARKING/ROSMAP/miRNA_data/ML-Baseline.json'
