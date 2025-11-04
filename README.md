@@ -1,175 +1,178 @@
-# MO-BICC Bench — *Multi-Omics Biomarker Cross-Cohort Benchmark*
 
-*(pronounced “mo-bik”)*
+# When Complexity Doesn’t Pay — Benchmarking Deep Learning and Ensemble Methods for Biomarker Discovery
 
-**MO-BICC Bench** is a reproducible benchmark for evaluating **biomarker discovery (feature selection)** and **disease diagnosis (machine learning)** across **multi-omics** datasets and **independent cohorts**. It compares **simple and complex models**, plus **ensembles**, to answer a practical question: *which methods yield compact, robust, and transferable biomarker panels across studies?*
+A fully reproducible benchmark comparing **27 feature selection strategies** (single and ensemble) and **11 classifiers** across **three multi-omics disease cohorts** (ROSMAP, PSP, BRCA). We evaluate predictive performance, stability, and **external biological validation** against HMDD, CTD (genes & pathways), GeneCards, and EWAS-ATLAS.
 
----
-
-## Why MO-BICC?
-
-* **Cross-cohort focus:** Train on Cohort A, test on Cohort B (and vice-versa) to measure **generalization**, not just in-sample performance.
-* **Multi-omics integration:** mRNA, miRNA, DNA methylation (± proteomics) with **early / intermediate / late** integration options.
-* **Biomarker realism:** Compact panels (e.g., *k* ∈ {5, 10, 20, 30, 50, 100, 200}), cost-aware scoring, and **stability** checks.
-* **Transparent preprocessing:** Variance filtering, FDR-controlled statistics, and a **PC1 < 50%** rule to curb redundancy.
-* **Reproducible by design:** Fixed seeds, YAML configs, environment lockfiles, and scriptable pipelines (Make/Snakemake).
+> **Companion paper:** *When Complexity Doesn’t Pay: Benchmarking Deep Learning and Ensemble Methods for Biomarker Discovery*. 
 
 ---
 
-## Scope
+## 🔍 What’s inside
 
-* **Tasks**
+* **End-to-end notebooks** to:
 
-  * **Diagnosis (binary/multiclass)**: e.g., AD vs control, Braak strata, etc.
-  * **Feature selection**: rankers, aggregators, modality-aware selection.
-  * **Ensembling**: rank aggregation + model stacking/blending.
-* **Datasets (examples)**
-
-  * **ROSMAP**, **MSBB**, **Mayo RNAseq** for cross-cohort bulk omics.
-  * Optional: **Banner/BLSA proteomics** (TMT), **AMP-AD** multi-omics, single-cell/sn-multiome for validation.
-* **Modalities**
-
-  * **mRNA**, **miRNA**, **DNA methylation** (± **proteomics**).
-  * Probe/feature IDs harmonized where applicable (e.g., HM27 subset for methylation, gene symbol mapping).
+  * prepare & clean data,
+  * run the benchmark across single/dual/triple-omics,
+  * aggregate ranks with ensembles,
+  * generate publication-ready figures/tables.
+* **Modular Python package (`notebooks/modules/…`)** for feature selection, rank aggregation, ML training/evaluation, functional enrichment, and plotting.
+* **Deep baselines:** wrapped, working code for **MORE** and **MOGONET** (kept separate for fair comparisons).
+* **Processed artifacts** for figures and tables used in the manuscript.
 
 ---
 
-## Benchmark Design
+## 📦 Repository layout (high-level)
 
-* **Splits**
+```
+Bench/
+  ├─ 7.Prepare Data For Publicatio Ready Plots.ipynb
+  ├─ 8.Plotting.ipynb
+MOGONET/
+  ├─ main_mogonet.py, train_test.py, utils.py, models.py, feat_importance.py
+  ├─ mogenet-feature-ranks.csv
+MORE/
+  ├─ Code/{main_MORE.py, train_test.py, utils.py, models.py, feat_importance.py, ...}
+  ├─ more-feature-ranks.csv
+RScripts/
+  ├─ BoxPlots.R, pheatap.R
+notebooks/
+  ├─ 1. Prepare All Validation Datasets.ipynb
+  ├─ 2. Data Cleaning.ipynb
+  ├─ 3. Data Preprocessing.ipynb
+  ├─ 4. Prepare Datasets for Experiments.ipynb
+  ├─ 5. BenchMarking Pipeline.ipynb
+  ├─ 6. Prepare Results For Visualization.ipynb
+  ├─ 7.Prepare Data For Publicatio Ready Plots.ipynb
+  ├─ 8.Plotting.ipynb
+  ├─ BenchPipeline{Single,Dual,Trio}{Brca,Mayo,Rosmap}.{py,sh}
+  └─ modules/
+      ├─ featureSelection/ (MRA.py, RRA.py, TA.py, ensemble_feature_selection.py)
+      ├─ differentialAnalysis/ (t-test, limma, mannwhitneyu, boruta, svm_rfe, shap, lime, ...)
+      ├─ machineLearning/ (classification.py)
+      ├─ functionalEnrichment/ (gProfiler.py, miR_to_Targets.py)
+      ├─ dataVisualization/ (plots.py, dimensionality_reduction.py)
+      ├─ benchmarker.py, benchmark_utils.py, marble.py, more_mogonet_utils.py
+      └─ utils.py, logger.py, stats.py, exception.py, verbose_config.py
+artifacts/
+  ├─ hm27_probe_ids.json
+  └─ mirBase_to_mirTARBase.json
+```
 
-  * **Within-cohort CV** for model/tuning.
-  * **Cross-cohort transfer** (e.g., train ROSMAP → test MSBB; train Mayo → test ROSMAP).
-* **Preprocessing (per MOGONET-style)**
-
-  * Variance thresholds (defaults): **mRNA 0.1**, **methylation 0.001**, **miRNA = 0** (drop only zero variance).
-  * **ANOVA + BH-FDR** on training folds to preselect informative features.
-  * Choose *k* so **PC1 explains < 50%** of variance; scale each omics to **\[0,1]**.
-* **Integration strategies**
-
-  * **Early** (feature-level concatenation with scaling).
-  * **Intermediate** (learn per-omic embeddings → fuse).
-  * **Late** (per-omic models → meta-learner).
-* **Panel sizes**
-
-  * Evaluate **k = {5, 10, 20, 30, 50, 100, 200}** (customizable) with identical splits for fair comparison.
-
----
-
-## Methods Covered
-
-* **Simple baselines:** t-test / ANOVA + Logistic Regression; Ridge/LASSO; Naive Bayes.
-* **Classical ML:** SVM (RBF/linear), Random Forest, XGBoost, LightGBM.
-* **Deep / graph:** MLPs; MOGONET-style graph integration (optional).
-* **Ensembles:**
-
-  * **Rank aggregation** (e.g., RRA, Borda variants) for feature selection.
-  * **Model stacking/blending** across modalities and panel sizes.
-
----
-
-## Metrics
-
-* **Predictive:** AUROC, AUPRC, Accuracy, F1, Balanced Accuracy, **calibration** (Brier, ECE).
-* **Panel quality:** size (*k*), **cost proxies**, assay count, cross-platform feasibility.
-* **Stability & overlap:** Jaccard / Kendall / CMC across CV folds & cohorts.
-* **Biology:** pathway enrichment (GO/KEGG/Reactome), known-gene recovery.
+> **Note:** Temporary `__pycache__`, `.ipynb_checkpoints`, and `logs/` are included for transparency but are not required to reproduce results.
 
 ---
 
-## Quickstart
+## 🧪 Datasets
+
+* **ROSMAP (AD)** – miRNA, mRNA, methylation
+* **PSP (MayoRNASeq)** – mRNA, proteomics, metabolomics
+* **BRCA (TCGA via UCSC Xena)** – miRNA, mRNA, methylation
+
+You’ll need to obtain raw data from the original sources (Synapse, UCSC Xena, etc.) and place them as expected by the notebooks. Each cohort’s **download/formatting** is scripted in `notebooks/1.*` and `notebooks/2–4.*`. Paths are parameterized inside notebooks and `notebooks/modules/verbose_config.py`.
+
+---
+
+## ⚙️ Environment
+
+We used **Python 3.11**. Create a clean environment:
 
 ```bash
-# Clone your repo (after you create it on GitHub):
-git clone https://github.com/<you>/mo-bicc-bench.git
-cd mo-bicc-bench
+conda create -n biomarker-bench python=3.11 -y
+conda activate biomarker-bench
 
-# (optional) Python env
-conda env create -f environment.yml
-conda activate omics-benchmark
-
-# (optional) R deps
-Rscript R/install_packages.R
-
-# 1) Put your wide table at data/raw/input_wide.csv
-#    Columns: "Sample ID", "Diagnosis", then features...
-
-# 2) Prepare expr/meta for limma
-python src/prepare_for_limma.py \
-  --input data/raw/input_wide.csv \
-  --expr data/processed/expr.csv \
-  --meta data/processed/meta.csv \
-  --group Diagnosis
-
-# 3) Run limma
-Rscript scripts/run_limma.R \
-  data/processed/expr.csv data/processed/meta.csv \
-  Diagnosis results/limma_results.csv Control
+# core
+pip install -r requirements.txt
 ```
 
-**Snakemake (optional)**
-Edit `config/config.yaml`, then:
+> If you use R plots, install the R packages listed in `RScripts/BoxPlots.R` and `pheatap.R`.
+
+---
+
+## 🚀 Quick start (end-to-end)
+
+1. **Prepare validation references**
+   Open and run: `notebooks/1. Prepare All Validation Datasets.ipynb`
+
+2. **Clean & preprocess cohorts**
+   Run sequentially:
+
+* `notebooks/2. Data Cleaning.ipynb`
+* `notebooks/3. Data Preprocessing.ipynb`
+* `notebooks/4. Prepare Datasets for Experiments.ipynb`
+
+3. **Run the benchmark**
+   Use a pipeline script (single/dual/triple; cohort-specific):
 
 ```bash
-snakemake -j 4
+# examples
+python notebooks/BenchPipelineSingleBrca.py
+python notebooks/BenchPipelineDualRosmap.py
+python notebooks/BenchPipelineTrio.py
 ```
 
----
+This produces cross-validated performance, ranked features, and panel-wise outputs under `notebooks/` and `Bench/`.
 
-## Configuration
+4. **Aggregate results & make figures/tables**
 
-```yaml
-# config/config.yaml
-sample_col: "Sample ID"
-group_col: "Diagnosis"
-reference_group: "Control"
-# add cohort paths, modality flags, panel sizes, seeds, etc.
+```bash
+# collect & normalize results for plotting
+jupyter nbconvert --to notebook --execute notebooks/6. Prepare Results For Visualization.ipynb
+# publication-ready data wrangling
+jupyter nbconvert --to notebook --execute notebooks/7.Prepare Data For Publicatio Ready Plots.ipynb
+# final figures
+jupyter nbconvert --to notebook --execute notebooks/8.Plotting.ipynb
 ```
 
----
+Key outputs:
 
-## Repository Layout
-
-```
-src/                # Python modules (prep, MOGONET-style preprocessing)
-scripts/            # CLI scripts (R & Python; limma, synapse downloaders)
-config/             # YAML configs for runs/pipelines
-data/
-  raw/              # input sources (ignored by git)
-  processed/        # prepared matrices & splits
-results/            # metrics, tables, selected panels
-notebooks/          # EDA and figure prototypes
-reports/            # manuscript-ready outputs
-figs/               # plots saved from runs
-R/                  # R scripts and installers
-logs/               # run logs
-```
+* `Bench/Cross_Validation_Results.csv` – all CV metrics
+* `Bench/Selected_Biomarker_Panels.csv` – top-k panels per selector
+* `Bench/plot_data_{BRCA,MayoRNASeq,ROSMAP}.csv` – figure sources
+* `Bench/table_{BRCA,MayoRNASeq,ROSMAP}.csv` – manuscript tables
 
 ---
 
-## Reproducibility & Data Access
+## 🧠 Methods at a glance
 
-* **Do not commit controlled data.** Keep large files in `data/raw/` (git-ignored).
-* Use Synapse/ADKP credentials to fetch cohorts; document exact versions and **checksums**.
-* Fix **random seeds**, save **splits** and **selected feature lists** per run.
+* **Single rankers (15):** t-test, Mann–Whitney U, LASSO/Ridge/Elastic Net, Boruta, RF-FI/RF-PFI, XGB-FI/XGB-PFI, SVM-RFE, SHAP, LIME, MORE-Ranker, MOGONET-Ranker.
+* **Ensemble rankers (13):** mean/median/geometric mean **rank/weight**, min/max/TA (threshold algorithm), **MRA**, **Stuart**, **RRA**.
+* **Classifiers (11):** Logistic Regression, SVM, MLP, Decision Tree, Random Forest, XGBoost, CatBoost, AdaBoost, Gradient Boosting, **MORE**, **MOGONET**.
 
----
-
-## Citation
-
-If you use **MO-BICC Bench**, please cite:
-
-> *MO-BICC Bench: A Multi-Omics Biomarker Cross-Cohort Benchmark for Feature Selection, Diagnosis, and Ensembling.*
-> (Cyrille Mesue Njume et al., 2025) — *preprint coming soon.*
+External validation: HMDD (miRNAs), CTD genes & CTD-pathways, GeneCards (genes), EWAS-ATLAS (CpGs). Validation helpers live under `notebooks/modules/functionalEnrichment/`.
 
 ---
 
-## License
 
-MIT. See `LICENSE`.
+
+> We **do not** blend MORE/MOGONET into ensembles to keep tiers separable (single → ensemble → deep). Use their ranks as standalone comparators.
 
 ---
 
-## Contact
+## 🔁 Reproducibility notes
 
-Questions, ideas, or contributions? Open an issue or reach out to **Cyrille Mesue Njume**.
+* **CV:** 5-fold stratified. Seeds are set within notebooks/modules (see `verbose_config.py` / `benchmarker.py`).
+* **Panels:** evaluated at `k ∈ {10,20,…,100}` and “All” (200/400/600 per single/dual/triple).
+* **Preprocessing:** modality-aware variance filters, ANOVA+FDR, correlation constraint (PC1 < 50%), min-max scaling; log10 for proteomics/metabolomics.
+* **Class imbalance:** BRCA tumor downsampled to ~1.2× controls (see `4.*` notebook).
+* **Validation build:** scripts in `notebooks/1.*` pull and standardize HMDD/CTD/GeneCards/EWAS-ATLAS; pathway validation uses g:Profiler → CTD cross-reference.
+
+---
+
+## 📜 Citation
+
+If you use this code or results, please cite the paper:
+
+> *When Complexity Doesn’t Pay: Benchmarking Deep Learning and Ensemble Methods for Biomarker Discovery.* (2025). 
+
+---
+
+
+## 🙌 Acknowledgements
+
+We thank the maintainers of **CTD, HMDD, GeneCards, EWAS-ATLAS, g:Profiler**, and the data providers behind **ROSMAP, TCGA-BRCA (UCSC Xena), and MayoRNASeq (PSP)**.
+
+---
+
+## ✉️ Contact
+
+For questions, issues, or collaboration requests, please open a GitHub issue or reach out to the corresponding author listed in the paper.
