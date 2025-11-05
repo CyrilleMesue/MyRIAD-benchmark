@@ -40,9 +40,109 @@ model_names_map <- c(
   "XGBClassifier"          = "XGBoost"
 )
 
+# Canonical label map (raw -> pretty)
+label_map <- c(
+  "NONE"             = "None",
+  "MORE:Ranker"      = "MORE-Ranker",
+  "MOGONET:Ranker"   = "MOGONET-Ranker",
+  "shap"             = "SHAP",
+  "lime"             = "LIME",
+  "t_test"           = "T-Test",
+  "RF-FI"            = "RF-FI",
+  "XGB-FI"           = "XGB-FI",
+  "RF-PFI"           = "RF-PFI",
+  "XGB-PFI"          = "XGB-PFI",
+  "lasso"            = "LASSO",
+  "ridge"            = "Ridge",
+  "elasticnet"       = "Elastic Net",
+  "boruta"           = "Boruta",
+  "mannwhitneyu"     = "Mann-Whitney U",  # en dash
+  "svm_rfe"          = "SVM-RFE",
+  "mean_rank"        = "Mean rank",
+  "min_rank"         = "Min rank",
+  "median_rank"      = "Median rank",
+  "rra_rank"         = "RRA",
+  "geom.mean_rank"   = "Geomean rank",
+  "stuart_rank"      = "Stuart",
+  "mra_rank"         = "MRA",
+  "mean_weight"      = "Mean weight",
+  "max_weight"       = "Max weight",
+  "median_weight"    = "Median weight",
+  "geom.mean_weight" = "Geomean weight",
+  "ta_weight"        = "TA"
+)
+
+metatable <- data.frame(
+  featureSelector = unname(label_map),
+  SelectorType = c(
+    # NONE
+    "Single",
+    # MORE/MOGONET rankers
+    "Single","Single",
+    # shap, lime
+    "Single","Single",
+    # t_test
+    "Single",
+    # RF-FI, XGB-FI, RF-PFI, XGB-PFI
+    "Single","Single","Single","Single",
+    # lasso, ridge, elasticnet, boruta
+    "Single","Single","Single","Single",
+    # mannwhitneyu, svm_rfe
+    "Single","Single",
+    # rank-based ensembles
+    "Ensemble","Ensemble","Ensemble","Ensemble","Ensemble","Ensemble","Ensemble",
+    # weight-based ensembles
+    "Ensemble","Ensemble","Ensemble","Ensemble","Ensemble"
+  ),
+  basis = c(
+    "Baseline",                 # NONE
+    "Model","Model",            # MORE/MOGONET rankers
+    "Weight","Weight",          # SHAP/LIME
+    "Weight",                   # t-test
+    "Weight","Weight","Weight","Weight",   # RF/XGB importances & PFI
+    "Model","Model","Model","Weight",      # LASSO/Ridge/EN, Boruta
+    "Weight","Rank",           # Mann–Whitney U, SVM-RFE
+    # rank-based ensembles
+    "Rank","Rank","Rank","Rank","Rank","Rank","Rank",
+    # weight-based ensembles
+    "Weight","Weight","Weight","Weight","Weight"
+  ),
+  category = c(
+    "Baseline",
+    "Deep ranker","Deep ranker",
+    "Explainer","Explainer",
+    "Univariate test",
+    "Tree importance","Tree importance","Permutation importance","Permutation importance",
+    "Linear model (embedded)","Linear model (embedded)","Linear model (embedded)","Wrapper (RF/Boruta)",
+    "Univariate test","Wrapper (RFE)",
+    "Rank aggregation","Rank aggregation","Rank aggregation","Rank aggregation","Rank aggregation","Rank aggregation","Rank aggregation",
+    "Weight aggregation","Weight aggregation","Weight aggregation","Weight aggregation","Weight aggregation"
+  ),
+  stringsAsFactors = FALSE
+)
+
+# optional: ordered factors for plotting
+metatable$SelectorType   <- factor(metatable$SelectorType, levels = c("Single","Ensemble"))
+metatable$basis    <- factor(metatable$basis, levels = c("Baseline","Rank","Weight","Model"))
+metatable$category <- factor(metatable$category, levels = c(
+  "Baseline",
+  "Univariate test",
+  "Linear model (embedded)",
+  "Tree importance",
+  "Permutation importance",
+  "Wrapper (RFE)",
+  "Wrapper (RF/Boruta)",
+  "Explainer",
+  "Deep ranker",
+  "Rank aggregation",
+  "Weight aggregation"
+))
+
+
 # Apply mapping
 df <- df %>%
-  mutate(modelName = recode(modelName, !!!model_names_map)) 
+  mutate(modelName = recode(modelName, !!!model_names_map)) %>%
+  mutate(featureSelector = recode(featureSelector, !!!label_map)) 
 
 # Ensure OmicsLevel follows the logical order
 df$OmicsLevel <- factor(df$OmicsLevel, 
@@ -65,7 +165,7 @@ gg_default_cols <- c(
 ################################################################################
 
 # Add the new column
-df$FeatureSelection <- ifelse(df$featureSelector != "NONE", "YES", "NO")
+df$FeatureSelection <- ifelse(df$featureSelector != "None", "YES", "NO")
 
 # Boxplot with a color-blind friendly palette (Dark2)
 feature_selection <- ggboxplot(df, x = "Cohort", y = "MeanF1",
@@ -535,29 +635,19 @@ selected_hue_feature <- "SelectorType"
 selected_principal_feature <- "featureSelector"
 
 data_subset <- df %>%
-  mutate(
-    SelectorType = case_when(
-      featureSelector == "NONE" ~ "NONE",
-      grepl("rank", featureSelector, ignore.case = TRUE) |
-        grepl("weight", featureSelector, ignore.case = TRUE) ~ "Ensemble",
-      TRUE ~ "Single"
-    )
-  )
+  select(-any_of("SelectorType")) %>%                     # drop old column if present
+  left_join(metatable %>% distinct(featureSelector, SelectorType),
+            by = "featureSelector")
 
 best_rows <- data_subset %>%
-  mutate(SelectorType = case_when(
-    featureSelector == "NONE" ~ "NONE",
-    grepl("rank", featureSelector, ignore.case = TRUE) |
-      grepl("weight", featureSelector, ignore.case = TRUE) ~ "Ensemble",
-    TRUE ~ "Single"
-  )) %>%
   group_by(featureSelector, modelName, SelectorType, Cohort) %>%
   slice_max(order_by = !!sym(selected_scoring_feature), with_ties = FALSE) %>%
   ungroup() %>%
-  mutate(Hue = paste(Cohort, SelectorType, sep = "_"))  # new combined hue
+  mutate(Hue = paste(Cohort, SelectorType, sep = "_"))
 
 best_rows <- best_rows %>%
   filter(numFeatures <= 100)
+best_rows <- best_rows[order(best_rows$SelectorType, decreasing = TRUE), ]
 
 Single_vs_ensemble_selectors <- ggplot(best_rows, aes_string(
   x = selected_principal_feature,
@@ -624,12 +714,11 @@ normalize_matrix <- function(x, margin = c("row", "col")) {
 
 # ---- 1) Filter and annotate ----
 df2 <- df %>%
-  filter(featureSelector != "NONE") %>%
-  mutate(
-    SelectorType = case_when(
-      grepl("rank|weight", featureSelector, ignore.case = TRUE) ~ "Ensemble",
-      TRUE ~ "Single"
-    )
+  filter(featureSelector != "None") %>%
+  select(-any_of("SelectorType")) %>%     # ensure a clean overwrite
+  left_join(
+    metatable %>% distinct(featureSelector, SelectorType),
+    by = "featureSelector"
   )
 
 # ---- Parameters ----
@@ -1238,6 +1327,11 @@ selected_validation_scorer <- "TP"      # column to plot on y-axis
 df_plot_all <- read.csv("BENCHMARKING/Biomarker_Validation_Results.csv")
 df_plot_all$Cohort[df_plot_all$Cohort == "MayoRNASeq"] <- "PSP"
 
+# Apply mapping
+df_plot_all <- df_plot_all %>%
+  mutate(featureSelector = recode(featureSelector, !!!label_map)) 
+
+
 # Explicit column names (no guessing)
 nb_col   <- "method_cutoff"
 topN_col <- "groundtruth_cutoff"
@@ -1340,13 +1434,26 @@ for (nb in selected_values) {
 df <- read.csv("BENCHMARKING/Selected_Biomarker_Panels.csv", stringsAsFactors = FALSE)
 df$Cohort[df$Cohort == "MayoRNASeq"] <- "PSP"
 
+
 df <- df %>%
   rename(
     `RF-FI`  = randomforest_feature_importance,
     `XGB-FI` = xgb_feature_importance,
     `RF-PFI` = rf_permutation_feature_importance,
-    `XGB-PFI`= xgb_permutation_feature_importance
+    `XGB-PFI`= xgb_permutation_feature_importance,
+    `MOGONET:Ranker` = MOGONET.Ranker, 
+    `MORE:Ranker` = MORE.Ranker, 
   )
+
+df <- df %>%
+  rename_with(function(nm) {
+    idx <- match(nm, names(label_map))
+    out <- nm
+    out[!is.na(idx)] <- unname(label_map[idx[!is.na(idx)]])
+    make.unique(out)
+  })
+
+
 
 # Filter to TripleOmics
 df_triple <- df %>% filter(OmicsLevel == "TripleOmics")
@@ -1446,6 +1553,14 @@ for (cohort in cohorts) {
   # 1. Load CSV produced by Python
   df <- read.csv(paste0("BENCHMARKING/", cohort, "_PCA_data.csv"),
                  check.names = FALSE, stringsAsFactors = FALSE)
+  
+  df <- df %>%
+    rename_with(function(nm) {
+      idx <- match(nm, names(label_map))
+      out <- nm
+      out[!is.na(idx)] <- unname(label_map[idx[!is.na(idx)]])
+      make.unique(out)
+    })
   
   # 2. Keep only numeric columns
   df_num <- df[sapply(df, is.numeric)]
@@ -1559,65 +1674,6 @@ cohorts <- c("ROSMAP","BRCA","PSP")
 
 heatmaps <- list()  # store each pheatmap object
 
-for (cohort in cohorts) {
-  # 1. Load the saved ranks table
-  df <- read.csv(paste0("BENCHMARKING/", cohort, "_Ranks_data.csv"), check.names = FALSE)
-  
-  # 2. Separate FeatureType and Feature columns
-  feature_types <- df$FeatureType
-  features <- df$Feature
-  
-  # 3. Keep only the ranker columns
-  ranker_df <- df %>% select(-FeatureType, -Feature)
-  
-  # 4. Make a numeric matrix for heatmap
-  mat <- as.matrix(ranker_df)
-  rownames(mat) <- features
-  
-  # 5. Column annotation: SelectorType = Ensemble or Single
-  col_anno <- data.frame(
-    SelectorType = ifelse(str_detect(colnames(mat), "(rank|weight)"), "Ensemble", "Single")
-  )
-  rownames(col_anno) <- colnames(mat)
-  
-  # 6. Row annotation: FeatureType
-  row_anno <- data.frame(FeatureType = feature_types)
-  rownames(row_anno) <- features
-  
-  # 7. We want to display rank numbers in each cell
-  numbers <- mat  # display numbers directly
-  
-  # 8. Plot heatmap with numbers annotated
-  p <- pheatmap(
-    mat,
-    cluster_rows = FALSE,
-    cluster_cols = TRUE,
-    annotation_col = col_anno,
-    annotation_row = row_anno,
-    color = viridis(100),
-    display_numbers = numbers,   # annotate with ranks
-    number_color = "black",      # color of the numbers
-    fontsize_number = 10,         # size of the numbers
-    show_rownames = TRUE,        
-    fontsize_col = 10, 
-    row_names_side = "left",
-    angle_col = 45,
-  )
-  
-  heatmaps[[cohort]] <- p  # store for later combination
-  
-  # Save PDF
-  pdf(paste0("BENCHMARKING/FIGURES/", cohort, "_RankHeatmap.pdf"), width = 14, height = 10)
-  print(p)
-  dev.off() 
-  
-  # Save PNG
-  png(paste0("BENCHMARKING/FIGURES/", cohort, "_RankHeatmap.png"), width = 14, height = 10, units="in", res=300)
-  print(p)
-  dev.off()
-}
-
-
 # Helper: build named colors for whatever levels are present,
 # preferring your distinct palette for any missing levels
 mk_anno_colors <- function(levels, defaults, palette) {
@@ -1646,6 +1702,13 @@ make_heatmap <- function(csv_path, cohort, out_dir = ".") {
   # 1) Load
   df <- read.csv(csv_path, stringsAsFactors = FALSE, check.names = FALSE)
   
+  df <- df %>%
+    rename_with(function(nm) {
+      idx <- match(nm, names(label_map))
+      out <- nm
+      out[!is.na(idx)] <- unname(label_map[idx[!is.na(idx)]])
+      make.unique(out)
+    })
   if (!all(c("Feature","FeatureType") %in% names(df))) {
     stop("CSV must contain 'Feature' and 'FeatureType' columns.")
   }
@@ -1787,6 +1850,10 @@ df_plot_all <- read.csv("BENCHMARKING/Biomarker_Validation_Results.csv")
 
 # Rename cohort: MayoRNASeq -> PSP
 df_plot_all$Cohort[df_plot_all$Cohort == "MayoRNASeq"] <- "PSP"
+
+# Apply mapping
+df_plot_all <- df_plot_all %>%
+  mutate(featureSelector = recode(featureSelector, !!!label_map)) 
 
 # Explicit column names
 nb_col   <- "method_cutoff"
