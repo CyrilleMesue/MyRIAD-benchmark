@@ -24,6 +24,8 @@ setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
 
 df <- read.csv("BENCHMARKING/Cross_Validation_Results.csv")  
 df$Cohort[df$Cohort == "MayoRNASeq"] <- "PSP"
+df$Cohort[df$Cohort == "ROSMAP"] <- "AD"
+df$Cohort[df$Cohort == "BRCA"] <- "BC"
 
 # Make a named vector of replacements
 model_names_map <- c(
@@ -47,7 +49,7 @@ label_map <- c(
   "MOGONET:Ranker"   = "MOGONET-Ranker",
   "shap"             = "SHAP",
   "lime"             = "LIME",
-  "t_test"           = "T-Test",
+  "t_test"           = "t-Test",
   "RF-FI"            = "RF-FI",
   "XGB-FI"           = "XGB-FI",
   "RF-PFI"           = "RF-PFI",
@@ -58,17 +60,17 @@ label_map <- c(
   "boruta"           = "Boruta",
   "mannwhitneyu"     = "Mann-Whitney U",  # en dash
   "svm_rfe"          = "SVM-RFE",
-  "mean_rank"        = "Mean rank",
-  "min_rank"         = "Min rank",
-  "median_rank"      = "Median rank",
+  "mean_rank"        = "Mean Rank",
+  "min_rank"         = "Min Rank",
+  "median_rank"      = "Median Rank",
   "rra_rank"         = "RRA",
-  "geom.mean_rank"   = "Geomean rank",
+  "geom.mean_rank"   = "Geomean Rank",
   "stuart_rank"      = "Stuart",
   "mra_rank"         = "MRA",
-  "mean_weight"      = "Mean weight",
-  "max_weight"       = "Max weight",
-  "median_weight"    = "Median weight",
-  "geom.mean_weight" = "Geomean weight",
+  "mean_weight"      = "Mean Weight",
+  "max_weight"       = "Max Weight",
+  "median_weight"    = "Median Weight",
+  "geom.mean_weight" = "Geomean Weight",
   "ta_weight"        = "TA"
 )
 
@@ -1326,6 +1328,9 @@ selected_validation_scorer <- "TP"      # column to plot on y-axis
 # -------------- load data --------------
 df_plot_all <- read.csv("BENCHMARKING/Biomarker_Validation_Results.csv")
 df_plot_all$Cohort[df_plot_all$Cohort == "MayoRNASeq"] <- "PSP"
+df_plot_all$Cohort[df_plot_all$Cohort == "ROSMAP"] <- "AD"
+df_plot_all$Cohort[df_plot_all$Cohort == "BRCA"] <- "BC"
+
 
 # Apply mapping
 df_plot_all <- df_plot_all %>%
@@ -1433,7 +1438,8 @@ for (nb in selected_values) {
 # read your data
 df <- read.csv("BENCHMARKING/Selected_Biomarker_Panels.csv", stringsAsFactors = FALSE)
 df$Cohort[df$Cohort == "MayoRNASeq"] <- "PSP"
-
+df$Cohort[df$Cohort == "ROSMAP"] <- "AD"
+df$Cohort[df$Cohort == "BRCA"] <- "BC"
 
 df <- df %>%
   rename(
@@ -1493,9 +1499,9 @@ for (cohort_name in cohorts) {
     select(-Feature) %>%
     as.data.frame()
   
-  if (cohort_name == "ROSMAP") {
+  if (cohort_name == "AD") {
     cohort_fill <- "#3cb44b"
-  } else if (cohort_name == "BRCA") {
+  } else if (cohort_name == "BC") {
     cohort_fill <- "#4363d8"
   } else if (cohort_name == "PSP") {
     cohort_fill <- "#FE6D8C"
@@ -1520,8 +1526,8 @@ for (cohort_name in cohorts) {
 }
 
 # Now you can access them like:
-upset_plots$ROSMAP
-upset_plots$BRCA
+upset_plots$AD
+upset_plots$BC
 upset_plots$PSP
 
 
@@ -1529,7 +1535,7 @@ upset_plots$PSP
 ############## PCA Plots Showing Similarities Between Rankers ##################
 ################################################################################
 # Cohorts (adjust names if your filenames differ)
-cohorts <- c("ROSMAP", "BRCA", "PSP")
+cohorts <- c("AD", "BC", "PSP")
 
 # Folder where Python saved CSVs (adjust if needed)
 outdir <- "../BENCHMARKING/FIGURES"
@@ -1545,7 +1551,7 @@ safe_read_csv <- function(path) {
   read.csv(path, stringsAsFactors = FALSE, check.names = FALSE)
 }
 
-cohorts <- c("ROSMAP","BRCA","PSP")
+cohorts <- c("AD","BC","PSP")
 
 pca_objects <- list()
 
@@ -1644,8 +1650,8 @@ wrapped_upset_plots <- lapply(upset_plots, function(uplot) {
 
 # Now combine using patchwork
 Figure5 <- (
-  wrapped_upset_plots$ROSMAP + 
-    wrapped_upset_plots$BRCA  + 
+  wrapped_upset_plots$AD + 
+    wrapped_upset_plots$BC  + 
     wrapped_upset_plots$PSP 
 ) +
   plot_layout(
@@ -1670,7 +1676,7 @@ ggsave("BENCHMARKING/FIGURES/Figure5.pdf", Figure5, width = 14, height = 20, dpi
 
 
 
-cohorts <- c("ROSMAP","BRCA","PSP")
+cohorts <- c("AD","BC","PSP")
 
 heatmaps <- list()  # store each pheatmap object
 
@@ -1812,9 +1818,9 @@ make_heatmap <- function(csv_path, cohort, out_dir = ".") {
 }
 
 # --- Run for each cohort (MayoRNASeq -> PSP) ---
-make_heatmap("results/plot_data_ROSMAP.csv", "ROSMAP", out_dir = "BENCHMARKING/FIGURES")
+make_heatmap("results/plot_data_AD.csv", "AD", out_dir = "BENCHMARKING/FIGURES")
 make_heatmap("results/plot_data_PSP.csv",    "PSP",    out_dir = "BENCHMARKING/FIGURES")     # <- changed here
-make_heatmap("results/plot_data_BRCA.csv",   "BRCA",   out_dir = "BENCHMARKING/FIGURES")
+make_heatmap("results/plot_data_BC.csv",   "BC",   out_dir = "BENCHMARKING/FIGURES")
 
 
 
@@ -1850,6 +1856,8 @@ df_plot_all <- read.csv("BENCHMARKING/Biomarker_Validation_Results.csv")
 
 # Rename cohort: MayoRNASeq -> PSP
 df_plot_all$Cohort[df_plot_all$Cohort == "MayoRNASeq"] <- "PSP"
+df_plot$Cohort[df_plot$Cohort == "ROSMAP"] <- "AD"
+df_plot$Cohort[df_plot$Cohort == "BRCA"] <- "BC"
 
 # Apply mapping
 df_plot_all <- df_plot_all %>%
